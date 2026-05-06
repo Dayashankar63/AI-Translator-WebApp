@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
@@ -111,6 +112,7 @@ export default function App() {
         onThemeToggle={() => setTheme(t => t === "dark" ? "light" : "dark")}
         theme={theme}
       />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
