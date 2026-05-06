@@ -91,7 +91,7 @@ const extractGroqMessage = (response) => {
 
 const getQuestionFromGroq = async (topic) => {
   const response = await client.chat.completions.create({
-    model: "llama3-8b-8192",
+    model: "llama-3.3-70b-versatile",
     messages: [{
       role: "user",
       content: `Ask one interview question on ${topic}`
@@ -145,7 +145,7 @@ router.post("/evaluate", authMiddleware, async (req, res) => {
     } else {
       try {
         const response = await client.chat.completions.create({
-          model: "llama3-8b-8192",
+          model: "llama-3.3-70b-versatile",
           messages: [{
             role: "user",
             content: `Evaluate answer: "${answer}" for question: "${question}". Give score out of 10 and feedback.`
@@ -222,7 +222,7 @@ router.post("/resume", authMiddleware, upload.single("resume"), async (req, res)
     }
 
     const response = await client.chat.completions.create({
-      model: "llama3-8b-8192",
+      model: "llama-3.3-70b-versatile",
       messages: [{
         role: "user",
         content: `Generate 5 interview questions based on this resume:\n${text}`
