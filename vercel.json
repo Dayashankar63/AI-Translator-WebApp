@@ -19,16 +19,11 @@
       "dest": "server/server.js"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "client/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|ico|png|jpg|svg|json|txt|map|webmanifest))",
-      "dest": "client/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "client/index.html"
+      "dest": "/client/$1"
     }
   ]
 }
