@@ -1,6 +1,7 @@
 import { useState } from "react";
-import axios from "../api";
+import axios from "axios";
 
+const API = process.env.REACT_APP_API_URL || "";
 
 const COMPANY_COLORS = { Google: "#4285F4", Amazon: "#FF9900", TCS: "#003087", Infosys: "#007CC3", Microsoft: "#00A4EF" };
 const CATEGORIES = ["HR", "Technical", "Puzzle", "Managerial"];
